@@ -1,15 +1,7 @@
-# VectorDB – a miniature vector database in Python 🚀
+# VectorDB – a miniature vector database in Python 
 
-> A weekend-size project that shows how to build a very small, but end-to-end, vector database: you can add text chunks, create an index, and query with k-nearest-neighbour search — all behind a clean FastAPI REST interface.
-
----
-
-### Why make yet-another vector store?
-
-1. **Learning value** – everything from the index to the repository layer is hand-written, no FAISS / Chroma, so you can read every line.
-2. **Hiring test** – the code answers the take-home brief you'll find in `docs/`.
-3. **Conversation starter** – the trade-offs are intentionally simple so we can talk about how to make it better (disk persistence, distributed replicas, metadata filters, etc.).
-
+> How to build a very small, but end-to-end, vector database: you can add text chunks, create an index, and query with k-nearest-neighbour search — all behind a clean FastAPI REST interface.
+> 
 ---
 
 ## Quick start
@@ -21,7 +13,7 @@ pip install -e .
 uvicorn app.main:app --reload  # API at http://127.0.0.1:8000/docs
 ```
 
-### Or with Docker
+### With Docker
 
 ```bash
 docker compose up --build  # same URL, no local Python needed
@@ -29,7 +21,7 @@ docker compose up --build  # same URL, no local Python needed
 
 ---
 
-## One-minute demo (copy/paste)
+## Quick demo
 
 ```bash
 # 1. create a library
@@ -51,7 +43,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/libraries/$LIB/query \
 
 ---
 
-## High-level design (2 minutes)
+## Design
 
 ```
 app/
@@ -86,12 +78,3 @@ pytest -q    # <1 s on my laptop
 | `EMBEDDING_API_KEY` | external embedding provider (unused in stub) | demo key |
 
 ---
-
-## Contributing / next steps
-
-* Swap the toy embedding for Cohere or OpenAI.  
-* Persist snapshots to disk (json / sqlite) so the DB survives a container restart.  
-* Add metadata filters (`created_after`, `tag=foo`).  
-* Spin up multiple nodes and play with leader election.
-
-Pull requests welcome — or just fork and hack away. 🤓 
