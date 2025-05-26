@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+app/__init__.py
+app/main.py
+app.egg-info/PKG-INFO
+app.egg-info/SOURCES.txt
+app.egg-info/dependency_links.txt
+app.egg-info/top_level.txt
+app/api/__init__.py
+app/api/v1/chunks.py
+app/api/v1/libraries.py
+app/core/config.py
+app/core/embedding.py
+app/domain/models.py
+app/domain/repositories.py
+app/domain/services.py
+app/infrastructure/indexing.py
